@@ -1,7 +1,7 @@
 {
   "background_color": "white",
   "theme_color": "white",
-  "description": "TiddlyWiki5 Plugin Library for TiddlyWiki Chinese Communities",
+  "description": "Featured TiddlyWiki Editions list from the global community",
   "display": "standalone",
   "icons": [
     {

@@ -1,7 +1,7 @@
 {
     "name": "Awesome-TiddlyWiki-Editions",
     "version": "1.0.0",
-    "description": "TiddlyWiki5 Plugin Library for TiddlyWiki Chinese Communities",
+    "description": "Featured TiddlyWiki Editions list from the global community",
     "main": "scripts/index.js",
     "scripts": {
         "server": "npx cross-env TIDDLYWIKI_PLUGIN_PATH='./plugins' TIDDLYWIKI_THEME_PATH='./themes' TIDDLYWIKI_LANGUAGE_PATH='./languages' npx tiddlywiki . --listen port=8080",
