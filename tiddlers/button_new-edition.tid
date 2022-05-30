@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 \whitespace trim
 <$list filter="[[IfEditorMode]get[text]else[no]match[yes]]"><$button tooltip="Add edition info to ATE wiki" aria-label="New Edition" class="tc-btn-invisible">
 {{$:/core/images/new-button}}
-<$action-createtiddler $basetitle={{{ [[Plugin_]addsuffix<now YYYY0MM0DD0mm0ss0XXX>] }}} tags="$:/tags/PluginWiki" $template="ATEPluginWikiTemplate">
+<$action-createtiddler $basetitle="Edition_" tags="$:/tags/PluginWiki" $template="ATEPluginWikiTemplate">
 <$action-navigate $to=<<createTiddler-title>>/>
 </$action-createtiddler>
 </$button></$list>

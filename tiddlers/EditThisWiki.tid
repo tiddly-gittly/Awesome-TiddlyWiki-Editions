@@ -26,8 +26,6 @@ type: text/vnd.tiddlywiki
 
 </center>
 
-随后你将会得到一个以`?/?`为标题的条目，点击修改条目的标题为`作者/发行版名`的格式。例如，对于林一二制作的 [[Tiddlywiki-NodeJS-Github-Template|https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template]] 模板，请将条目标题改为 `LinOnetwo/Tiddlywiki-NodeJS-Github-Template`。修改完标题后，保存条目。
-
 随后条目应该是长这样：
 
 <center>
@@ -64,8 +62,6 @@ After opening the project, click the <kbd>+</kbd> button in the sidebar to add a
 [img width=300px [AddPluginInfoButton.png]]
 
 </center>
-
-You will then be given a tiddler with the letters `?/?` as the title, click edit button and change the tiddler title to the `author/edition name` format. For example, for the [[Tiddlywiki-NodeJS-Github-Template|https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template]] created by linonetwo, change the tiddler title to `LinOnetwo/Tiddlywiki-NodeJS-Github-Template`. After modifying the title, save the tiddler.
 
 The tiddler should then look like this.
 

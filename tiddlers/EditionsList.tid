@@ -47,7 +47,7 @@ type: text/vnd.tiddlywiki
 <$list filter="[[IfEditorMode]get[text]else[no]match[yes]]">
 <$button tag="div" tooltip="Add edition info to ATE wiki" aria-label="New Edition" class="tc-btn-invisible gk0wk-notion-gallery-block" style="align-items: center; justify-content: center; flex-direction: row">
 {{$:/core/images/new-button}} <span style="padding-left: 5px;">New Edition</span>
-<$action-createtiddler $basetitle="?/?" tags="$:/tags/PluginWiki" $template="ATEPluginWikiTemplate">
+<$action-createtiddler $basetitle="Edition_" tags="$:/tags/PluginWiki" $template="ATEPluginWikiTemplate">
 <$action-navigate $to=<<createTiddler-title>>/>
 </$action-createtiddler>
 </$button>
