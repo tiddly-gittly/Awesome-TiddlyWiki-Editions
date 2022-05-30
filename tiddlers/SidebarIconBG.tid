@@ -1,0 +1,11 @@
+created: 20211118064207081
+creator: 林一二
+modified: 20211210053600324
+modifier: 林一二
+tags: $:/tags/SideBarSegment TW5CPL
+title: SidebarIconBG
+type: text/vnd.tiddlywiki
+
+<div style="position:absolute;opacity:0.5;user-select:none;pointer-events:none;width:60%;bottom:10%;right:15%;" class="gk0wk-caticon gk0wk-rotate-infinite">
+{{icon.svg}}
+</div>
