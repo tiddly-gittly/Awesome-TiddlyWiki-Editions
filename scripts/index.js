@@ -473,7 +473,7 @@ function buildLibrary(distDir, minify) {
   const downloadFileMap = {};
   mkdirsSync(`${distDir}/plugins`); // 插件目标目录
   mkdirsSync(`${distDir}/tmp`); // 临时的插件目录
-  shellI(`cp plugin_files/* ${distDir}/tmp/`); // 拷贝本地插件(未在网络上发布的)
+  shellI(`cp edition_files/* ${distDir}/tmp/`); // 拷贝本地插件(未在网络上发布的)
   pluginInfoTiddlerTitles.forEach((title) => {
     try {
       const tiddler = $tw.wiki.getTiddler(title).fields;
@@ -605,7 +605,7 @@ function buildLibrary(distDir, minify) {
   } else {
     shellI(`mv ${distDir}/index-raw.html ${distDir}/index.html`);
   }
-  console.log(chalk.green.bold("CPL generated"));
+  console.log(chalk.green.bold("ATE generated"));
 }
 
 module.exports = {

@@ -1,28 +1,25 @@
-created: 20220118144111816
-modified: 20220322171716707
-tags: 
-title: PluginsGallery
+title: EditionsList
 type: text/vnd.tiddlywiki
 
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">
 
 <center>
-<$edit-text tiddler="$:/tmp/searchplugin/input" default="" placeholder="输入插件名称搜索" focus="true" tag=input class="tc-titlebar tc-edit-texteditor"/>
+<$edit-text tiddler="$:/tmp/searchplugin/input" default="" placeholder="输入发行版名称搜索" focus="true" tag=input class="tc-titlebar tc-edit-texteditor"/>
 </center>
 
-: [[我想安装插件，如何使用CPL？|Welcome]]
-: [[我是插件作者，如何为CPL登记新插件？|RegisterNewPlugins]]
+: [[我想安装发行版，如何使用此站？|Welcome]]
+: [[我是发行版作者，如何为此站登记新插件？|RegisterNewEditions]]
 
 </$list>
 <$list filter="[<lang>!search[zh]]">
 
 <center>
-<$edit-text tiddler="$:/tmp/searchplugin/input" default="" placeholder="Enter plugin name to search" focus="true" tag=input  class="tc-titlebar tc-edit-texteditor"/>
+<$edit-text tiddler="$:/tmp/searchplugin/input" default="" placeholder="Enter edition name to search" focus="true" tag=input  class="tc-titlebar tc-edit-texteditor"/>
 </center>
 
-: [[I want to install plugins. How to use CPL?|Welcome]]
-: [[I'm plugins author. How to register a new plugin for CPL?|RegisterNewPlugins]]
+: [[I want to install an edition. How to use ATE?|Welcome]]
+: [[I'm an edition author. How to register a new edition for ATE?|RegisterNewEditions]]
 
 </$list>
 </$list>
@@ -48,9 +45,9 @@ type: text/vnd.tiddlywiki
 </div></$link>
 </$list>
 <$list filter="[[IfEditorMode]get[text]else[no]match[yes]]">
-<$button tag="div" tooltip="Add plugin info to CPL wiki" aria-label="New Plugin" class="tc-btn-invisible gk0wk-notion-gallery-block" style="align-items: center; justify-content: center; flex-direction: row">
-{{$:/core/images/new-button}} <span style="padding-left: 5px;">New Plugin</span>
-<$action-createtiddler $basetitle="?/?" tags="$:/tags/PluginWiki" $template="CPLPluginWikiTemplate">
+<$button tag="div" tooltip="Add edition info to ATE wiki" aria-label="New Edition" class="tc-btn-invisible gk0wk-notion-gallery-block" style="align-items: center; justify-content: center; flex-direction: row">
+{{$:/core/images/new-button}} <span style="padding-left: 5px;">New Edition</span>
+<$action-createtiddler $basetitle="?/?" tags="$:/tags/PluginWiki" $template="ATEPluginWikiTemplate">
 <$action-navigate $to=<<createTiddler-title>>/>
 </$action-createtiddler>
 </$button>

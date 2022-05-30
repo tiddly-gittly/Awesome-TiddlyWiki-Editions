@@ -1,16 +1,16 @@
-caption_CN: 欢迎使用CPL！
-caption_EN: Welcome to CPL!
+caption_CN: 欢迎使用发行版列表 ！
+caption_EN: Welcome to ATE!
 created: 20211117163457173
 creator: Sttot
 i18ncaption: yes
 icon: 📦
-modified: 20220308020000684
-modifier: Sttot
+modified: 20220530020000684
+modifier: LinOnetwo
 page-cover: https://unsplash.com/photos/ZjX-z2Q5zrk/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8cGx1Z2lufHwwfHx8fDE2MzcxMTYzOTg&force=true&w=1920
 title: Index
 type: text/vnd.tiddlywiki
 
 
-{{PluginsGallery}}
+{{EditionsList}}
 
 ---

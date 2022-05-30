@@ -3,7 +3,7 @@ creator: Sttot
 list-after: LanguageSwitcher
 modified: 20220321151023208
 modifier: Sttot
-tags: $:/tags/ViewTemplate TW5CPL
+tags: $:/tags/ViewTemplate TW5ATE
 title: $:/tags/PluginWiki
 type: text/vnd.tiddlywiki
 
@@ -79,7 +79,7 @@ type: text/vnd.tiddlywiki
 |!名称 |<$edit-text field="cpl.name" tag=input placeholder={{{ [<currentTiddler>get[cpl.title]split[/]last[1]addprefix[可能是：]] }}}/> |
 |!简介 |<$edit-text field="cpl.description" tag=textarea class="tc-edit-texteditor" placeholder="为插件添加简短的介绍"/> |
 |!作者 |<$edit-text field="cpl.author" tag=input placeholder={{{ [<currentTiddler>get[cpl.title]split[/]last[2]first[1]addprefix[可能是：]] }}}/> |
-|!URI |<$edit-text field="cpl.uri" tag=textarea placeholder={{{ [<currentTiddler>get[cpl.title]removeprefix[$:/plugins/]search-replace:gim:regexp<illegalcharexp>,[_]encodeuricomponent[]addprefix[从哪里可以找到这个插件(.json, .tid 或者 .html等)。如果插件的json文件在网络上，请填写下载地址；如果插件没有下载地址，需要手动下载或者编译，请将json插件文件放在本项目的本地文件夹的plugin_files/路径下，并命名为 ]addsuffix[.json]] }}}/> |
+|!URI |<$edit-text field="cpl.uri" tag=textarea placeholder={{{ [<currentTiddler>get[cpl.title]removeprefix[$:/plugins/]search-replace:gim:regexp<illegalcharexp>,[_]encodeuricomponent[]addprefix[从哪里可以找到这个发行版(xxx.html等)。如果发行版没有下载地址，需要手动下载或者编译，请将 HTML 发行版文件放在本项目的本地文件夹的`edition_files/`路径下，并命名为 ]addsuffix[.json]] }}}/> |
 |!类型 |<$select field="cpl.plugin-type" default="plugin"><$list filter="[[plugin]] [[language]] [[theme]] [[import]] [[library]] [[info]]"><option value=<<currentTiddler>>><$view field="title"/></option></$list></$select> |
 |!介绍 |<$edit-codemirror field="cpl.readme" placeholder="插件的详细介绍" type="text/vnd.tiddlywiki"/> |
 |!图标 |<$edit-text field="cpl.icon" placeholder="插件图标的URL" tag=input/> |
@@ -97,7 +97,7 @@ type: text/vnd.tiddlywiki
 |!Name |<$edit-text field="cpl.name" tag=input placeholder={{{ [<currentTiddler>get[cpl.title]split[/]last[1]addprefix[Shall be: ]] }}}/> |
 |!Description |<$edit-text field="cpl.description" tag=textarea class="tc-edit-texteditor" placeholder="Add brief description for this plugin."/> |
 |!Author |<$edit-text field="cpl.author" tag=input placeholder={{{ [<currentTiddler>get[cpl.title]split[/]last[2]first[1]addprefix[Shall be: ]] }}}/> |
-|!URI |<$edit-text field="cpl.uri" tag=textarea placeholder={{{ [<currentTiddler>get[cpl.title]removeprefix[$:/plugins/]search-replace:gim:regexp<illegalcharexp>,[_]encodeuricomponent[]addprefix[Where to find this plugin(.json, .tid or .html, etc.). Fill with uri if json file can be download from internet. If the plugin does not have a download address and needs to be downloaded or compiled manually, please place the json plugin file under the plugin_files/ path in the local folder of this project and name it to ]addsuffix[.json]] }}}/> |
+|!URI |<$edit-text field="cpl.uri" tag=textarea placeholder={{{ [<currentTiddler>get[cpl.title]removeprefix[$:/plugins/]search-replace:gim:regexp<illegalcharexp>,[_]encodeuricomponent[]addprefix[Where to find this plugin(.json, .tid or .html, etc.). Fill with uri if json file can be download from internet. If the plugin does not have a download address and needs to be downloaded or compiled manually, please place the json plugin file under the edition_files/ path in the local folder of this project and name it to ]addsuffix[.json]] }}}/> |
 |!Type |<$select field="cpl.plugin-type" default="plugin"><$list filter="[[plugin]] [[language]] [[theme]] [[import]] [[library]] [[info]]"><option value=<<currentTiddler>>><$view field="title"/></option></$list></$select> |
 |!Readme |<$edit-codemirror field="cpl.readme" placeholder="Readme of this plugin." type="text/vnd.tiddlywiki"/> |
 |!Icon |<$edit-text field="cpl.icon" placeholder="URL of plugin's Icon" tag=input/> |

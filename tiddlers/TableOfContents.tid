@@ -13,7 +13,7 @@ type: text/vnd.tiddlywiki
 
 !! 2. [[如何为发行版列表登记新发行版？|RegisterNewEditions]]
 
-!! 3. [[所有收录的发行版|EditionsGallery]]
+!! 3. [[所有收录的发行版|EditionsList]]
 
 </$list><$list filter="[<lang>!search[zh]]">
 
@@ -21,6 +21,6 @@ type: text/vnd.tiddlywiki
 
 !! 2. [[How to register a new edition for ATE?|RegisterNewEditions]]
 
-!! 3. [[All included editions|EditionsGallery]]
+!! 3. [[All included editions|EditionsList]]
 
 </$list></$list>

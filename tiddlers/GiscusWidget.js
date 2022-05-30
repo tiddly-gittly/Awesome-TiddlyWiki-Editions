@@ -15,7 +15,7 @@
         if (id === '') return;
         var scriptNode = this.document.createElement('script');
         scriptNode.setAttribute("src", "https://giscus.app/client.js");
-        scriptNode.setAttribute("data-repo", "tiddly-gittly/TiddlyWiki-CPL");
+        scriptNode.setAttribute("data-repo", "tiddly-gittly/Awesome TiddlyWiki Editions");
         scriptNode.setAttribute("data-repo-id", "R_kgDOGZOJxQ");
         scriptNode.setAttribute("data-category", "Plugins");
         scriptNode.setAttribute("data-category-id", "DIC_kwDOGZOJxc4CASwR");
