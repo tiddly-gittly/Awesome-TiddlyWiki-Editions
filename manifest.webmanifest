@@ -5,19 +5,19 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "TiddlyWiki-CPL/icon-black.png",
+      "src": "Awesome-TiddlyWiki-Editions/icon-black.png",
       "sizes": "775x775",
       "type": "image/png"
     },
     {
-      "src": "TiddlyWiki-CPL/icon-white.png",
+      "src": "Awesome-TiddlyWiki-Editions/icon-white.png",
       "sizes": "775x775",
       "type": "image/png"
     }
   ],
-  "name": "TiddlyWiki5 CPL",
-  "short_name": "TW5 CPL",
+  "name": "TiddlyWiki5 ATE",
+  "short_name": "TW5 ATE",
   "lang": "zh-CN",
-  "start_url": "TiddlyWiki-CPL/",
-  "scope": "TiddlyWiki-CPL/"
+  "start_url": "Awesome-TiddlyWiki-Editions/",
+  "scope": "Awesome-TiddlyWiki-Editions/"
 }
