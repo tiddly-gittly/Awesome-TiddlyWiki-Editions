@@ -7,7 +7,7 @@ tags: $:/tags/ViewTemplate TW5ATE
 title: CommentForPlugins
 type: text/vnd.tiddlywiki
 
-<$list filter="[all[current]tag[$:/tags/PluginWiki]!is[draft]]" variable="plugin">
+<$list filter="[all[current]tag[$:/tags/EditionWiki]!is[draft]]" variable="plugin">
 <$list filter="[[IfEditorMode]get[text]else[no]!match[yes]]">
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">

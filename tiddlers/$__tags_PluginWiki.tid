@@ -4,7 +4,7 @@ list-after: LanguageSwitcher
 modified: 20220321151023208
 modifier: Sttot
 tags: $:/tags/ViewTemplate TW5ATE
-title: $:/tags/PluginWiki
+title: $:/tags/EditionWiki
 type: text/vnd.tiddlywiki
 
 \define illegalcharexp() [:/<>"\|?*]
@@ -60,7 +60,7 @@ type: text/vnd.tiddlywiki
 
 </div>
 
-<$list filter="[all[current]tag[$:/tags/PluginWiki]!is[draft]]">
+<$list filter="[all[current]tag[$:/tags/EditionWiki]!is[draft]]">
 
 !! {{$:/language/Buttons/Preview/Caption}}
 

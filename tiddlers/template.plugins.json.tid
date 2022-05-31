@@ -5,6 +5,6 @@ title: template.plugins.json
 type: text/vnd.tiddlywiki
 
 `[
-`<$list filter="[all[tiddlers]!is[draft]tag[$:/tags/PluginWiki]get[title]]">`	`<$jsontiddler tiddler=<<currentTiddler>> escapeUnsafeScriptChars="yes"/>`,
+`<$list filter="[all[tiddlers]!is[draft]tag[$:/tags/EditionWiki]get[title]]">`	`<$jsontiddler tiddler=<<currentTiddler>> escapeUnsafeScriptChars="yes"/>`,
 `</$list>`	null
 ]`

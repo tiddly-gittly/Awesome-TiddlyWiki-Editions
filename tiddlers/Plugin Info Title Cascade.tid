@@ -5,4 +5,4 @@ tags: $:/tags/ViewTemplateTitleFilter
 title: Plugin Info Title Cascade
 type: text/vnd.tiddlywiki
 
-[tag[$:/tags/PluginWiki]then[Plugin Info Title]]
+[tag[$:/tags/EditionWiki]then[Plugin Info Title]]

@@ -357,7 +357,7 @@ function _importPlugin(uri, title) {
     return;
   }
   let pluginInfo = {
-    tags: "$:/tags/PluginWiki",
+    tags: "$:/tags/EditionWiki",
     "cpl.readme": getReadmeFromPlugin(plugin),
     "cpl.uri": uri,
   };
@@ -365,7 +365,7 @@ function _importPlugin(uri, title) {
     if (fieldPair[0] in plugin) pluginInfo[fieldPair[1]] = plugin[fieldPair[0]];
   });
   const tmp = $tw.wiki.filterTiddlers(
-    `[tag[$:/tags/PluginWiki]cpl.title[${pluginInfo["cpl.title"]}]]`
+    `[tag[$:/tags/EditionWiki]cpl.title[${pluginInfo["cpl.title"]}]]`
   );
   if (tmp.length > 0) {
     let answer = readlineSync.question(
@@ -468,7 +468,7 @@ function buildLibrary(distDir, minify) {
     type: "application/json",
   };
   const pluginInfoTiddlerTitles = $tw.wiki.filterTiddlers(
-    "[all[tiddlers]!is[draft]tag[$:/tags/PluginWiki]]"
+    "[all[tiddlers]!is[draft]tag[$:/tags/EditionWiki]]"
   );
   const downloadFileMap = {};
   mkdirsSync(`${distDir}/plugins`); // 插件目标目录
