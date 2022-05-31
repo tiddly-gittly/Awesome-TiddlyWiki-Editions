@@ -172,19 +172,19 @@ const mergingFields = [
 
 function mergePluginInfo(pluginTiddler, infoTiddler) {
   let newInfoTiddler = {
-    title: infoTiddler["cpl.title"],
-    author: infoTiddler["cpl.author"],
-    name: infoTiddler["cpl.name"],
-    description: infoTiddler["cpl.description"],
-    readme: infoTiddler["cpl.readme"],
-    version: infoTiddler["cpl.version"],
-    "plugin-type": infoTiddler["cpl.type"],
-    icon: infoTiddler["cpl.icon"],
-    dependents: infoTiddler["cpl.dependents"]
-      ? infoTiddler["cpl.dependents"].split("\n").join(" ")
+    title: infoTiddler["ate.title"],
+    author: infoTiddler["ate.author"],
+    name: infoTiddler["ate.name"],
+    description: infoTiddler["ate.description"],
+    readme: infoTiddler["ate.readme"],
+    version: infoTiddler["ate.version"],
+    "plugin-type": infoTiddler["ate.type"],
+    icon: infoTiddler["ate.icon"],
+    dependents: infoTiddler["ate.dependents"]
+      ? infoTiddler["ate.dependents"].split("\n").join(" ")
       : "",
-    "parent-plugin": infoTiddler["cpl.parent-plugin"],
-    "core-version": infoTiddler["cpl.core-version"],
+    "parent-plugin": infoTiddler["ate.parent-plugin"],
+    "core-version": infoTiddler["ate.core-version"],
     "requires-reload": ifPluginRequiresReload(pluginTiddler),
   };
   mergeField("version", pluginTiddler, newInfoTiddler, $tw.version);
@@ -285,20 +285,20 @@ function importLibrary() {
 }
 
 const fieldConvert = [
-  ["title", "cpl.title"],
-  ["author", "cpl.author"],
-  ["name", "cpl.name"],
-  ["description", "cpl.description"],
-  ["plugin-type", "cpl.plugin-type"],
-  ["source", "cpl.source"],
-  ["sourcecode", "cpl.source"],
-  ["github", "cpl.source"],
-  ["documentation", "cpl.documentation"],
-  ["document", "cpl.documentation"],
-  ["doc", "cpl.documentation"],
-  ["dependents", "cpl.dependents"],
-  ["parent-plugin", "cpl.parent-plugin"],
-  ["core-version", "cpl.core-version"],
+  ["title", "ate.title"],
+  ["author", "ate.author"],
+  ["name", "ate.name"],
+  ["description", "ate.description"],
+  ["plugin-type", "ate.plugin-type"],
+  ["source", "ate.source"],
+  ["sourcecode", "ate.source"],
+  ["github", "ate.source"],
+  ["documentation", "ate.documentation"],
+  ["document", "ate.documentation"],
+  ["doc", "ate.documentation"],
+  ["dependents", "ate.dependents"],
+  ["parent-plugin", "ate.parent-plugin"],
+  ["core-version", "ate.core-version"],
 ];
 const importCache = {};
 /**
@@ -358,20 +358,20 @@ function _importPlugin(uri, title) {
   }
   let pluginInfo = {
     tags: "$:/tags/EditionWiki",
-    "cpl.readme": getReadmeFromPlugin(plugin),
-    "cpl.uri": uri,
+    "ate.readme": getReadmeFromPlugin(plugin),
+    "ate.uri": uri,
   };
   fieldConvert.forEach((fieldPair) => {
     if (fieldPair[0] in plugin) pluginInfo[fieldPair[1]] = plugin[fieldPair[0]];
   });
   const tmp = $tw.wiki.filterTiddlers(
-    `[tag[$:/tags/EditionWiki]cpl.title[${pluginInfo["cpl.title"]}]]`
+    `[tag[$:/tags/EditionWiki]ate.title[${pluginInfo["ate.title"]}]]`
   );
   if (tmp.length > 0) {
     let answer = readlineSync.question(
       chalk.blue(
         `Plugin ${chalk.bold(
-          pluginInfo["cpl.title"]
+          pluginInfo["ate.title"]
         )} already exists ${chalk.grey(
           "(as " + tmp[0] + ")"
         )}, should I overwrite it with a new message? [Y/N]\n`
@@ -401,7 +401,7 @@ function _importPlugin(uri, title) {
         tmp.length > 0
           ? chalk.yellow.bold.underline("update")
           : chalk.green.bold.underline("add")
-      } ${pluginInfo.title}(${chalk.grey(pluginInfo["cpl.title"])}) to cpl.`
+      } ${pluginInfo.title}(${chalk.grey(pluginInfo["ate.title"])}) to ate.`
     )
   );
   return true;
@@ -479,29 +479,29 @@ function buildLibrary(distDir, minify) {
       const tiddler = $tw.wiki.getTiddler(title).fields;
       // 带有uri，需要下载下来，但是需要是tw支持的格式
       if (
-        tiddler["cpl.uri"] &&
-        tiddler["cpl.uri"] !== "" &&
-        $tw.config.fileExtensionInfo[path.extname(tiddler["cpl.uri"])] &&
-        tiddler["cpl.title"] &&
-        tiddler["cpl.title"] !== ""
+        tiddler["ate.uri"] &&
+        tiddler["ate.uri"] !== "" &&
+        $tw.config.fileExtensionInfo[path.extname(tiddler["ate.uri"])] &&
+        tiddler["ate.title"] &&
+        tiddler["ate.title"] !== ""
       ) {
         console.log(
-          `- Downloading plugin file ${chalk.bold(tiddler["cpl.title"])}`
+          `- Downloading plugin file ${chalk.bold(tiddler["ate.title"])}`
         );
         const distPluginName =
-          formatTitle(tiddler["cpl.title"]) + path.extname(tiddler["cpl.uri"]);
-        if (downloadFileMap[tiddler["cpl.uri"]]) {
+          formatTitle(tiddler["ate.title"]) + path.extname(tiddler["ate.uri"]);
+        if (downloadFileMap[tiddler["ate.uri"]]) {
           shellI(
             `cp ${
-              downloadFileMap[tiddler["cpl.uri"]]
+              downloadFileMap[tiddler["ate.uri"]]
             } ${distDir}/tmp/${distPluginName}`
           );
         } else {
           shellI(
-            `wget '${tiddler["cpl.uri"]}' -O ${distDir}/tmp/${distPluginName}`
+            `wget '${tiddler["ate.uri"]}' -O ${distDir}/tmp/${distPluginName}`
           );
           downloadFileMap[
-            tiddler["cpl.uri"]
+            tiddler["ate.uri"]
           ] = `${distDir}/tmp/${distPluginName}`;
         }
       }
@@ -515,7 +515,7 @@ function buildLibrary(distDir, minify) {
   const files = fs.readdirSync(`${distDir}/tmp`);
   pluginInfoTiddlerTitles.forEach((title) => {
     const tiddler = JSON.parse($tw.wiki.getTiddlerAsJson(title));
-    if (!tiddler["cpl.title"] || tiddler["cpl.title"] === "") {
+    if (!tiddler["ate.title"] || tiddler["ate.title"] === "") {
       console.warn(
         chalk.yellow(
           `[Warning] ${title} missed plugin title, skip this plugin.`
@@ -524,7 +524,7 @@ function buildLibrary(distDir, minify) {
       return;
     }
     try {
-      const pluginName = formatTitle(tiddler["cpl.title"]);
+      const pluginName = formatTitle(tiddler["ate.title"]);
       // 找到文件夹下对应的插件文件
       const fileRegExp = new RegExp(pluginName + "\\..*");
       const pluginFile = findFirstOne(files, (file) => {
@@ -545,12 +545,12 @@ function buildLibrary(distDir, minify) {
       // 加载、提取插件文件
       const plugin = getTiddlerFromFile(
         `${distDir}/tmp/${pluginFile}`,
-        tiddler["cpl.title"]
+        tiddler["ate.title"]
       );
       if (!plugin) {
         console.warn(
           chalk.yellow(
-            `[Warning] Cannot find tiddler ${tiddler["cpl.title"]} in file ${pluginFile}, skip this plugin.`
+            `[Warning] Cannot find tiddler ${tiddler["ate.title"]} in file ${pluginFile}, skip this plugin.`
           )
         );
         return;

@@ -4,4 +4,4 @@ tags:
 title: Plugin Info Title
 type: text/vnd.tiddlywiki
 
-<$text text={{{ [<currentTiddler>get[cpl.title]split[/]last[2]join[/]] }}}/>
+<$text text={{{ [<currentTiddler>get[ate.title]split[/]last[2]join[/]] }}}/>
