@@ -1,0 +1,10 @@
+title: Scenarios_EN
+type: text/vnd.tiddlywiki
+
+!! Scenarios
+
+We need a scenario field, so we can mark some editions as template for creating new wiki (like the empty edition), and some editions as help (like the [[tiddlywiki.com]] and [[groktiddlywiki.com]] ).
+
+And we may have more scenarios like `social` for [[https://links.tiddlywiki.org]].
+
+scenario field help Apps know where to put these editions, when creating new wiki, we only list template scenario. When click on “Help”, list the help scenario.
