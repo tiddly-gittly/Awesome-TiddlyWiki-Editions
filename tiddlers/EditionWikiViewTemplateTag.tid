@@ -74,20 +74,21 @@ type: text/vnd.tiddlywiki
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]" variable="lang">
 
-|!标题 |<$edit-text field="ate.title" tag=input placeholder="插件的标题，以$:/plugins/开头" }}}/> |
-|!版本 |<$edit-text field="ate.version" tag=input placeholder="当插件文件不包含版本号时，会用此版本号替代"/> |
-|!名称 |<$edit-text field="ate.name" tag=input placeholder={{{ [<currentTiddler>get[ate.title]split[/]last[1]addprefix[可能是：]] }}}/> |
-|!简介 |<$edit-text field="ate.description" tag=textarea class="tc-edit-texteditor" placeholder="为插件添加简短的介绍"/> |
-|!作者 |<$edit-text field="ate.author" tag=input placeholder={{{ [<currentTiddler>get[ate.title]split[/]last[2]first[1]addprefix[可能是：]] }}}/> |
-|!URI |<$edit-text field="ate.uri" tag=textarea placeholder={{{ [<currentTiddler>get[ate.title]removeprefix[$:/plugins/]search-replace:gim:regexp<illegalcharexp>,[_]encodeuricomponent[]addprefix[从哪里可以找到这个发行版(xxx.html等)。如果发行版没有下载地址，需要手动下载或者编译，请将 HTML 发行版文件放在本项目的本地文件夹的`edition_files/`路径下，并命名为 ]addsuffix[.json]] }}}/> |
-|!类型 |<$select field="ate.plugin-type" default="plugin"><$list filter="[[plugin]] [[language]] [[theme]] [[import]] [[library]] [[info]]"><option value=<<currentTiddler>>><$view field="title"/></option></$list></$select> |
+|!名称 |<$edit-text field="ate.name" tag=input placeholder="展示给用户看的发行版名称，可以与发行版内的标题不一致，若留空，将视为与发行版内的标题一致" /> |
+|!简介 |<$edit-text field="ate.description" tag=textarea class="tc-edit-texteditor" placeholder="简短的介绍，用一句话宣传此发行版"/> |
+|!URI |<$edit-text field="ate.uri" tag=textarea placeholder="从哪里可以找到这个发行版(xxx.html等)。如果发行版没有下载地址，需要手动下载或者编译，请将 HTML 发行版文件放在本项目的本地文件夹的`edition_files/`路径下，并重命名为「发行版名.html」的格式" /> |
+|!类型 |<$select field="ate.scenario" default="plugin"><$list filter="[[plugin]] [[language]] [[theme]] [[import]] [[library]] [[info]]"><option value=<<currentTiddler>>><$view field="title"/></option></$list></$select> |
 |!介绍 |<$edit-codemirror field="ate.readme" placeholder="插件的详细介绍" type="text/vnd.tiddlywiki"/> |
-|!图标 |<$edit-text field="ate.icon" placeholder="插件图标的URL" tag=input/> |
 |!源代码 |<$edit-text field="ate.sourse" tag=input placeholder="Source Code Project URL"/> |
 |!文档 |<$edit-text field="ate.documentation" tag=input placeholder="Documentation URL"/> |
-|!前置依赖 |<$edit-text class="tc-edit-texteditor" field="ate.dependents" placeholder="前置依赖插件的标题" tag=textarea/> |
-|!父插件 |<$edit-text field="ate.parent-plugin" tag=input placeholder="父插件的标题"/> |
-|!核心版本要求 |<$edit-text field="ate.core-version" tag=input placeholder="最小的核心版本，如'>=5.2.0'"/> |
+
+以下内容无需填写，将从发行版 HTML 中自动识别，如果填写了，将以填写内容为准。
+
+|!作者 |<$edit-text field="ate.author" tag=input placeholder="发行版作者，将提取发行版内的条目作者信息，并以发行版内出现次数最多的作者为准" /> |
+|!标题 |<$edit-text field="ate.title" tag=input placeholder="站点标题，将从发行版的 $:/SiteTitle 提取" /> |
+|!副标题 |<$edit-text field="ate.subTitle" tag=input placeholder="站点副标题，将从 $:/SiteSubtitle 提取" /> |
+|!语言 |<$edit-text field="ate.locale" tag=input placeholder="空格隔开的语言列表，将从发行版安装的语言插件列表提取"/> |
+|!图标 |<$edit-text field="ate.icon" placeholder="发行版图标的URL或base64格式的图片，将从发行版的 $:/favicon.ico 提取" tag=input/> |
 
 </$list>
 <$list filter="[<lang>!search[zh]]" variable="lang">
