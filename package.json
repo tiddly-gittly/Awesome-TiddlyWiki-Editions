@@ -7,7 +7,7 @@
         "server": "npx cross-env TIDDLYWIKI_PLUGIN_PATH='./plugins' TIDDLYWIKI_THEME_PATH='./themes' TIDDLYWIKI_LANGUAGE_PATH='./languages' npx tiddlywiki . --listen port=8080",
         "buildlibrary": "node -e \"require('./scripts/index').build();\"",
         "buildonline": "node -e \"require('./scripts/build').buildOnlineHTML('dist', 'index.html', true, '-[tag[GenerateExclude]] -[is[draft]]');\"",
-        "buildJSON": "node -e \"require('./scripts/index').buildJSON();\""
+        "buildJSON": "zx scripts/buildJSON.mjs"
     },
     "repository": {
         "type": "git",
@@ -29,10 +29,7 @@
         "tiddlywiki": "5.2.2",
         "tw5-typed": "0.2.8",
         "uglify-js": "3.15.4",
-        "workbox-cli": "6.5.3"
-    },
-    "dependencies": {
-        "chalk": "4.1.2",
-        "readline-sync": "^1.4.10"
+        "workbox-cli": "6.5.3",
+        "zx": "^6.2.2"
     }
 }
