@@ -7,7 +7,7 @@
         "uri": "",
         "tags": "$:/tags/EditionWiki",
         "type": "text/vnd.tiddlywiki",
-        "modified": "20220605084425896",
+        "modified": "20220605084701485",
         "modifier": "林一二",
         "_title": "",
         "_type": "plugin",
@@ -23,6 +23,7 @@
         "ate.name": "TiddlyWiki XP",
         "ate.readme": "TiddlyWiki XP 特点",
         "ate.preview": "TiddlyWiki XP Mobile.png\nTiddlyWiki XP Desktop.png",
-        "ate.sourse": "https://github.com/keatonlao/tiddlywiki-xp/"
+        "ate.sourse": "https://github.com/keatonlao/tiddlywiki-xp/",
+        "page-cover": "TiddlyWiki XP Mobile.png"
     }
 ]
