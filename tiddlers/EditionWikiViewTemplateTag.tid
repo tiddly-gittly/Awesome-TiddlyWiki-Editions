@@ -76,13 +76,13 @@ type: text/vnd.tiddlywiki
 
 |!名称 |<$edit-text field="ate.name" tag=input placeholder="展示给用户看的发行版名称，可以与发行版内的标题不一致，若留空，将视为与发行版内的标题一致" /> |
 |!简介 |<$edit-text field="ate.description" tag=textarea class="tc-edit-texteditor" tag=input placeholder="简短的介绍，用一句话宣传此发行版" /> |
+|!详细介绍 |<$edit-text field="ate.readme" tag=input placeholder="发行版的详细介绍，可以是指向一个 Markdown 或 tid 文件的链接，将自动下载提取其内容；也可以是一个条目名，将自动提取其内容" /> |
 |!URI |<$edit-text field="ate.uri" tag=input placeholder="从哪里可以找到这个发行版(xxx.html等)。如果发行版没有下载地址，需要手动下载或者编译，请将 HTML 发行版文件放在本项目的本地文件夹的`edition_files/`路径下，并重命名为「发行版名.html」的格式" /> |
 |!镜像源 |<$edit-text field="ate.mirrors" tag=textarea placeholder="可选填，一个一行，换行隔开的多个下载地址，在上面的 URI 下载超时后，会逐个尝试从镜像源下载" /> |
 |!主要使用场景 |<$select field="ate.scenario" default="template"><$list filter="[[template]] [[help]] [[documentation]] [[social]]"><option value=<<currentTiddler>>><$view field="title"/></option></$list></$select> 此发行版的分类，详见[[使用场景介绍|Scenarios_CN]] |
-|!介绍 |<$edit-codemirror class="edit-edition-textarea" field="ate.readme" type="text/vnd.tiddlywiki" tag=input placeholder="发行版的详细介绍，可以使用 WikiText，可以是指向一个 Markdown 或 tid 文件的链接，将自动下载提取其内容" /> |
 |!预览图 |<$edit-text field="ate.preview" tag=textarea placeholder="发行版的截图的 URL 地址或条目标题，可以填一个或多个，每行一个" /> |
-|!源代码 |<$edit-text field="ate.sourse" tag=input placeholder="Source Code Project URL" /> |
-|!文档 |<$edit-text field="ate.documentation" tag=input placeholder="Documentation URL" /> |
+|!源代码 |<$edit-text field="ate.sourse" tag=input placeholder="代码仓库 URL" /> |
+|!文档 |<$edit-text field="ate.documentation" tag=input placeholder="可选填，文档站的 URL，不填默认和发行版 URI 一致" /> |
 
 以下内容无需填写，将从发行版 HTML 中自动识别，如果填写了，将以填写内容为准。
 
@@ -105,13 +105,13 @@ type: text/vnd.tiddlywiki
 
 |!Name |<$edit-text field="ate.name" tag=input placeholder="The name of the release displayed to the user can be different from the title of the release, if left blank, it will be considered the same as the title of the release" /> |
 |!Description |<$edit-text field="ate.description" tag=textarea class="tc-edit-texteditor" tag=input placeholder="A short introduction, promoting the release in one sentence" /> |
+|!Readme |<$edit-codemirror field="ate.readme" tag=input placeholder="A detailed description of the edition, which can be a link to a Markdown or tid file that will automatically download and extract its contents, or can be a title of a tiddler in the edition, will extract the text of that tiddler." /> |
 |!URI |<$edit-text field="ate.uri" tag=input placeholder="Where to find the edition (xxx.html, etc.). If the edition does not have a download address and needs to be downloaded or compiled manually, place the HTML edition file in the `edition_files/` path in the local folder of this project and rename it to `edition_name.html` format" /> |
 |!MirrorSite |<$edit-text field="ate.mirrors" tag=textarea placeholder="Optional, Multiple download addresses url each in a line. Client will try to download from the mirror source one by one after the URI download timeout above" /> |
 |!MainScenario |<$select field="ate.scenario" default="template"><$list filter="[[template]] [[help]] [[documentation]] [[social]]"><option value=<<currentTiddler>>><$view field="title"/></option></$list></$select> Classification of this edition, see [[Descriptions of scenarios|Scenarios_EN]] |
-|!Readme |<$edit-codemirror class="edit-edition-textarea" field="ate.readme" type="text/vnd.tiddlywiki" tag=input placeholder="A detailed description of the edition, which can be a WikiText, can be a link to a Markdown or tid file that will automatically download and extract its contents" /> |
 |!PreviewPicture |<$edit-text field="ate.preview" tag=textarea placeholder="Image URL address or title name of a screenshot tiddler of this edition, can have multiple each in a line" /> |
 |!SourceCode |<$edit-text field="ate.sourse" tag=input placeholder="Source Code Project URL" /> |
-|!Documentation |<$edit-text field="ate.documentation" tag=input placeholder="Documentation URL" /> |
+|!Documentation |<$edit-text field="ate.documentation" tag=input placeholder="Optional Documentation URL, default to as same as the edition's URI" /> |
 
 The following fields does not need to be filled in. They will be automatically recognized from the edition HTML. If it is filled in, it will prevail.
 

@@ -1,0 +1,28 @@
+[
+    {
+        "created": "20220604130750722",
+        "creator": "林一二",
+        "text": "",
+        "title": "Edition_TiddlyWikiXP",
+        "uri": "",
+        "tags": "$:/tags/EditionWiki",
+        "type": "text/vnd.tiddlywiki",
+        "modified": "20220605084425896",
+        "modifier": "林一二",
+        "_title": "",
+        "_type": "plugin",
+        "homepage": "",
+        "locale": "",
+        "author": "",
+        "description": "",
+        "name": "",
+        "ate.uri": "https://keatonlao.github.io/tiddlywiki-xp/",
+        "ate.mirrors": "https://keatonlao.gitee.io/tiddlywiki-xp/",
+        "ate.scenario": "help",
+        "ate.description": "在官方英文空白版本上装配了一些必备插件和友好的新手教程，让新手可以快速体验 TiddlyWiki 的魅力。除了是帮助文档，也是一个新知识库模板。",
+        "ate.name": "TiddlyWiki XP",
+        "ate.readme": "TiddlyWiki XP 特点",
+        "ate.preview": "TiddlyWiki XP Mobile.png\nTiddlyWiki XP Desktop.png",
+        "ate.sourse": "https://github.com/keatonlao/tiddlywiki-xp/"
+    }
+]
