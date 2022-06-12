@@ -40,14 +40,11 @@ await Promise.all(
       ) {
         console.log(`- Downloading edition file ${chalk.bold(tiddler['ate.name'])}`);
         const distEditionName = formatTitle(tiddler['ate.name']) + (path.extname(tiddler['ate.uri']) || '.html');
-        if (downloadFileMap[tiddler['ate.uri']]) {
-          await $`cp ${downloadFileMap[tiddler['ate.uri']]} ${distEditionDir}/${distEditionName}`;
-        } else {
-          await $`wget ${tiddler['ate.uri']} -O ${distEditionDir}/${distEditionName}`;
-          downloadFileMap[tiddler['ate.uri']] = `${distEditionDir}/${distEditionName}`;
-        }
         const htmlContent = await fs.readFile(`${distEditionDir}/${distEditionName}`, 'utf8');
         const tiddlers = $tw.wiki.deserializeTiddlers('text/html', htmlContent)
+        const result = tiddlers.filter(item => item.title.startsWith('$:/'))
+        // DEBUG: console
+        console.log(`result`, result);
         // example see https://talk.tiddlywiki.org/t/choosing-starting-template-a-tw-edition-wiki-template-list-api-json-example/2974/4?u=linonetwo
         const newEditionInfo = {
           // number of non-system, non-plugin tiddlers, too many of these pre-packaged tiddlers may make it difficult to upgrade (can't upgrade via clicking upgrade plugins)

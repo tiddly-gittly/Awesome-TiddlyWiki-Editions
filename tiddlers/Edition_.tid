@@ -1,0 +1,20 @@
+_title: 
+_type: plugin
+ate.description: Notion风格的知识库，预装常用插件让它更贴近Notion体验，由太记作者制作
+ate.name: ItonNote
+ate.readme: 使用手册
+ate.sourse: https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template
+ate.uri: https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template
+author: 
+created: 20220610154252475
+creator: 林一二
+description: 
+homepage: 
+locale: 
+modified: 20220610155021142
+modifier: 林一二
+name: 
+tags: $:/tags/EditionWiki
+title: Edition_
+type: text/vnd.tiddlywiki
+uri: 
