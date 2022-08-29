@@ -1,3 +1,6 @@
+/**
+ * 构建发行版列表数据 JSON
+ */
 import { fs } from 'zx';
 
 const distDir = path.resolve('dist');

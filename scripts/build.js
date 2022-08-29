@@ -119,33 +119,6 @@ function buildOfflineHTML(distDir, htmlName, minify, excludeFilter) {
     }
 }
 
-/**
- * 构建发行版列表数据 JSON
- * @param {string} pluginFilter 要发布插件的过滤器，默认为 '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/languages/]!prefix[$:/themes/tiddlywiki/]!tag[$:/tags/PluginLibrary]]'
- * @param {string} distDir 目标路径，空或者不填则默认为'dist/library'
- * @param {boolean} minify 是否最小化HTML，默认为true
- */
-function buildJSON(pluginFilter, distDir, minify) {
-    if (typeof pluginFilter !== 'string' || pluginFilter.length === 0) pluginFilter = '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/languages/]!prefix[$:/themes/tiddlywiki/]!tag[$:/tags/PluginLibrary]]';
-    if (typeof distDir !== 'string' || distDir.length === 0) distDir = 'dist/library';
-    if (typeof minify !== 'boolean') minify = true;
-
-    shell(`npx tiddlywiki . --output ${distDir}` +
-        ' --makelibrary $:/UpgradeLibrary' +
-        ` --savelibrarytiddlers $:/UpgradeLibrary ${pluginFilter} recipes/library/tiddlers/ $:/UpgradeLibrary/List` +
-        ' --savetiddler $:/UpgradeLibrary/List recipes/library/tiddlers.json' +
-        ' --rendertiddler $:/plugins/tiddlywiki/pluginlibrary/library.template.html index-raw.html text/plain' +
-        ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\''
-    );
-
-    // 最小化：HTML
-    if (minify) {
-        shellI(`npx html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/index.html ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
-    } else {
-        shellI(`mv ${distDir}/index-raw.html ${distDir}/${htmlName}`);
-    }
-}
-
 module.exports = {
     buildOnlineHTML: buildOnlineHTML,
     buildOfflineHTML: buildOfflineHTML,

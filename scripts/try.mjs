@@ -1,4 +1,5 @@
 import { fs } from 'zx';
+import path from 'path'
 
 const distDir = path.resolve('dist');
 const distEditionDir = path.join(distDir, 'editions')
@@ -31,7 +32,7 @@ await Promise.all(
     try {
       const tiddler = $tw.wiki.getTiddler(title).fields;
       // DEBUG: console
-      console.log(`tiddler`, tiddler);
+      // console.log(`tiddler`, tiddler);
       // 带有uri，需要下载下来，但是需要是tw支持的格式
       if (
         tiddler['ate.uri'] &&
@@ -42,7 +43,7 @@ await Promise.all(
         const distEditionName = formatTitle(tiddler['ate.name']) + (path.extname(tiddler['ate.uri']) || '.html');
         const htmlContent = await fs.readFile(`${distEditionDir}/${distEditionName}`, 'utf8');
         const tiddlers = $tw.wiki.deserializeTiddlers('text/html', htmlContent)
-        const result = tiddlers.filter(item => item.title.startsWith('$:/'))
+        const result = tiddlers.filter(item => item.title?.startsWith('$:/language'))
         // DEBUG: console
         console.log(`result`, result);
         // example see https://talk.tiddlywiki.org/t/choosing-starting-template-a-tw-edition-wiki-template-list-api-json-example/2974/4?u=linonetwo

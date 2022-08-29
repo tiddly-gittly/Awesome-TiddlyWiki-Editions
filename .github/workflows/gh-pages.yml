@@ -26,8 +26,8 @@ jobs:
       - name: Install Dependency
         run: npm install
 
-      - name: Build Library
-        run: npm run buildonline && npm run buildlibrary
+      - name: Build Result
+        run: npm run build
 
       - name: Make offline cache
         run: npx workbox injectManifest workbox-config.js
